@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">
+                <span class="text-gradient">DevPortfolio</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-primary ms-2" id="downloadResume">
+                            <i class="fas fa-download me-2"></i>Resume
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6 order-2 order-lg-1">
+                    <div class="hero-content">
+                        <h1 class="hero-title">
+                            Hi, I'm <span class="text-gradient">Nilesh Mantati</span>
+                        </h1>
+                        <h2 class="hero-subtitle">Frontend Developer</h2>
+                        <p class="hero-description">
+                            I create beautiful, responsive, and user-friendly web applications using modern
+                            technologies.
+                            Passionate about clean code, innovative design, and delivering exceptional user experiences.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#projects" class="btn btn-primary btn-lg me-3">
+                                <i class="fas fa-eye me-2"></i>View My Work
+                            </a>
+                            <a href="#contact" class="btn btn-outline-light btn-lg">
+                                <i class="fas fa-envelope me-2"></i>Get In Touch
+                            </a>
+                        </div>
+                        <div class="social-links mt-4">
+                            <a href="https://github.com/nileshmantati" target="_blank" class="social-link"><i
+                                    class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_google-one-tap-submit"
+                                target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/mantatinilesh/" target="_blank" class="social-link"><i
+                                    class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2 mt-5 mt sm-0 pt-3 pt sm-0">
+                    <div class="hero-image">
+                        <div class="image-container">
+                            <img src="./img/img.jpeg" alt="Frontend Developer" class="profile-img">
+                            <div class="floating-elements">
+                                <div class="floating-element element-1">
+                                    <i class="fab fa-html5"></i>
+                                </div>
+                                <div class="floating-element element-2">
+                                    <i class="fab fa-css3-alt"></i>
+                                </div>
+                                <div class="floating-element element-3">
+                                    <i class="fab fa-js-square"></i>
+                                </div>
+                                <div class="floating-element element-4">
+                                    <i class="fab fa-react"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section mt-5 pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title text-center mb-5">
+                        <h2>About Me</h2>
+                        <p class="section-subtitle">Get to know me better</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <h3 class="mb-4">Frontend Developer & UI/UX Enthusiast</h3>
+                        <p class="mb-4">
+                            With over 3 years of experience in frontend development, I specialize in creating
+                            modern, responsive web applications that provide exceptional user experiences.
+                            I'm passionate about clean code, innovative design, and staying up-to-date with
+                            the latest web technologies.
+                        </p>
+                        <p class="mb-4">
+                            When I'm not coding, you can find me exploring new design trends, contributing to
+                            open-source projects, or sharing knowledge with the developer community through blogs and
+                            tutorials.
+                        </p>
+                        <div class="about-stats row">
+                            <div class="col-6 col-md-3">
+                                <div class="stat-item">
+                                    <h4>50+</h4>
+                                    <p>Projects</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="stat-item">
+                                    <h4>3+</h4>
+                                    <p>Years Exp</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="stat-item">
+                                    <h4>100%</h4>
+                                    <p>Success Rate</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="stat-item">
+                                    <h4>24/7</h4>
+                                    <p>Support</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-image">
+                        <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="About Me" class="img-fluid rounded-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding bg-light mt-5">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title text-center mb-5">
+                        <h2>My Skills</h2>
+                        <p class="section-subtitle">Technologies I work with</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">HTML/CSS</span>
+                            <span class="skill-percentage">95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">React</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">C</span>
+                            <span class="skill-percentage">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Bootstrap</span>
+                            <span class="skill-percentage">92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="92"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Tailwind</span>
+                            <span class="skill-percentage">88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="88"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">C++</span>
+                            <span class="skill-percentage">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Git/GitHub</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding mt-5">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title text-center mb-5">
+                        <h2>My Projects</h2>
+                        <p class="section-subtitle">Recent work I'm proud of</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="./img/home1-intro.jpg" alt="E-commerce Website" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://nileshmantati.github.io/Ecomall-Project/" target="_blank"
+                                        class="btn btn-light btn-sm me-2"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="btn btn-light btn-sm"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h4>E-commerce Platform</h4>
+                            <p>Modern e-commerce website built with React and Node.js</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Html</span>
+                                <span class="tech-tag">Css</span>
+                                <span class="tech-tag">Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="./img/00_Preview.__large_preview.jpg" alt="Dashboard App" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://nileshmantati.github.io/OrioBook-project/" target="_blank"
+                                        class="btn btn-light btn-sm me-2"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="btn btn-light btn-sm"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h4>OrioBook</h4>
+                            <p>Interactive dashboard with real-time data visualization</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Html</span>
+                                <span class="tech-tag">Css</span>
+                                <span class="tech-tag">Tailwind </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="./img/Screenshot 2025-06-03 140800.png" alt="Mobile App" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://nileshmantati.github.io/Sizzle/" target="_blank"
+                                        class="btn btn-light btn-sm me-2"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="btn btn-light btn-sm"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h4>Restoran</h4>
+                            <p>Order Sizzle with fast delivering</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Html</span>
+                                <span class="tech-tag">Css</span>
+                                <span class="tech-tag">Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="./img/Booksaw-1536x942.webp" alt="Mobile App" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://nileshmantati.github.io/landing_react_web/" target="_blank"
+                                        class="btn btn-light btn-sm me-2"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="btn btn-light btn-sm"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h4>Book Store</h4>
+                            <p>Parchaing Books</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Html</span>
+                                <span class="tech-tag">Css</span>
+                                <span class="tech-tag">React js</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="./img/Screenshot 2025-06-09 182506.png" alt="Mobile App" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://nileshmantati.github.io/Travel-Agency-Website/" target="_blank"
+                                        class=" btn btn-light btn-sm me-2"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="btn btn-light btn-sm"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h4>Travel Agancy</h4>
+                            <p>Book Tickets of Flight</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Html</span>
+                                <span class="tech-tag">Css</span>
+                                <span class="tech-tag">Bootstrap</span>
+                                <span class="tech-tag">Java Script</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="./img/Screenshot 2025-06-03 141539.png" alt="Mobile App" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://nileshmantati.github.io/Email-Marketing/" target="_blank"
+                                        class="btn btn-light btn-sm me-2"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="btn btn-light btn-sm"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h4>Email Marketing</h4>
+                            <p>Email Marketing</p>
+                            <div class="project-tech">
+                                <div class="project-tech">
+                                    <span class="tech-tag">Html</span>
+                                    <span class="tech-tag">Css</span>
+                                    <span class="tech-tag">Bootstrap</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding bg-light mt-5">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title text-center mb-5">
+                        <h2>Services</h2>
+                        <p class="section-subtitle">What I can do for you</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>Web Development</h4>
+                        <p>Creating responsive, fast, and modern websites using the latest technologies and best
+                            practices.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4>Responsive Design</h4>
+                        <p>Ensuring your website looks and works perfectly on all devices, from mobile to desktop.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h4>UI/UX Design</h4>
+                        <p>Designing intuitive and beautiful user interfaces that provide exceptional user experiences.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4>Performance Optimization</h4>
+                        <p>Optimizing websites for speed, SEO, and better user experience with modern techniques.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h4>Maintenance & Support</h4>
+                        <p>Providing ongoing maintenance, updates, and technical support for your web applications.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Consulting & Training</h4>
+                        <p>Offering consulting services and training sessions on modern web development practices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding mt-5">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title text-center mb-5">
+                        <h2>Get In Touch</h2>
+                        <p class="section-subtitle">Let's work together</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-info row mb-5">
+                        <div class="col-md-4 text-center mb-4">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <h5>Email</h5>
+                                <p>alex@example.com</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center mb-4">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <h5>Phone</h5>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center mb-4">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <h5>Location</h5>
+                                <p>Ahmedabad , Gujarat, India</p>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="contact-form">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="fas fa-paper-plane me-2"></i>Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer pt-3 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2024 Alex Johnson. All rights reserved.</p>
+                    <p>Built with ❤️ using HTML, Bootstrap & JavaScript</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("downloadResume").addEventListener("click", () => {
+                const resumeUrl = "NileshCV.pdf";
+                const link = document.createElement("a");
+                link.href = resumeUrl;
+                link.download = "Nilesh_Mantati_Resume.pdf";
+                link.target = "_blank";
+                link.click();
+            });
+        });
+    </script>
+</body>
+
+</html>
