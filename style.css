@@ -368,7 +368,7 @@ html {
 .project-image img {
     width: 100%;
     height: 250px;
-    object-fit: cover;
+    /* object-fit: cover; */
     transition: transform 0.3s ease;
 }
 
