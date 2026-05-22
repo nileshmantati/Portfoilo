@@ -17,6 +17,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 </head>
 
 <body>
@@ -24,7 +25,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#home">
-                <span class="text-gradient">DevPortfolio</span>
+                <span class="text-gradient title">DevPortfolio</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -46,8 +47,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#services">Services</a>
                     </li>
-                    <li class="nav-item">
-                        <button class="btn btn-primary ms-2" id="downloadResume">
+                    <li class="nav-item resume">
+                        <button class="btn ms-2" id="downloadResume">
                             <i class="fas fa-download me-2"></i>Resume
                         </button>
                     </li>
@@ -62,20 +63,22 @@
             <div class="row align-items-center min-vh-100">
                 <div class="col-lg-6 order-2 order-lg-1">
                     <div class="hero-content">
+                        <span class="hero-pretitle">Hello World, I am</span>
+
                         <h1 class="hero-title">
-                            Hi, I'm <span class="text-gradient">Nilesh Mantati</span>
+                            <span class="text-gradient">Nilesh Mantati</span>
                         </h1>
-                        <h2 class="hero-subtitle">Frontend Developer</h2>
+                        <span id="typed-text"></span>
                         <p class="hero-description">
-                            I create beautiful, responsive, and user-friendly web applications using modern
-                            technologies.
-                            Passionate about clean code, innovative design, and delivering exceptional user experiences.
+                            I build robust, secure, and highly responsive full-stack web applications using modern
+                            frameworks. Passionate about clean architecture, seamless user experiences, and turning
+                            complex backend logic into scalable digital solutions.
                         </p>
                         <div class="hero-buttons">
-                            <a href="#projects" class="btn btn-primary btn-lg me-3">
+                            <a href="#projects" class="btn btn-lg me-3">
                                 <i class="fas fa-eye me-2"></i>View My Work
                             </a>
-                            <a href="#contact" class="btn btn-outline-light btn-lg">
+                            <a href="#contact" class="btn btn-lg">
                                 <i class="fas fa-envelope me-2"></i>Get In Touch
                             </a>
                         </div>
@@ -91,9 +94,9 @@
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 mt-5 mt sm-0 pt-3 pt sm-0">
-                    <div class="hero-image">
+                    <div class="hero-image text-center">
                         <div class="image-container">
-                            <img src="./img/img.jpeg" alt="Frontend Developer" class="profile-img">
+                            <img src="./img/profile_img.png" alt="Full Stack Developer" class="profile-img">
                             <div class="floating-elements">
                                 <div class="floating-element element-1">
                                     <i class="fab fa-html5"></i>
@@ -131,15 +134,16 @@
                     <div class="about-content">
                         <h3 class="mb-4">Frontend Developer & UI/UX Enthusiast</h3>
                         <p class="mb-4">
-                            I Motivated and enthusiastic fresher pursuing full-stack development. Skilled in C, C++,
-                            HTML5, CSS3, Bootstrap, JavaScript
-                            and ReactJS. Currently learning RESTAPI with plans to advance into backend technologies.
+                            Motivated Full-Stack Developer with a strong foundation in building scalable web
+                            applications. On the frontend, I specialize in crafting responsive and dynamic user
+                            interfaces using React.js, JavaScript, and modern CSS frameworks. My core strength lies in
+                            bridging the gap between seamless user experiences and robust, secure backend architectures.
                         </p>
-                        <p class="mb-4">Passionate about software development and eager to gain hands-on experience
-                            through
-                            real-world projects and
-                            internships. Committed to applying
-                            programming skills and growing into a successful software developer.</p>
+                        <p class="mb-4">I have deep hands-on experience developing backend systems using Python, Django,
+                            and Django REST Framework, alongside modern technologies like FastAPI. Passionate about
+                            software infrastructure and security, I actively work with JWT authentication,
+                            containerization using Docker, and cloud deployment.
+                        </p>
                         <div class="about-stats row justify-content-center">
                             <div class="col-6 col-md-3">
                                 <div class="stat-item">
@@ -173,7 +177,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section-padding bg-light mt-5">
+    <section id="skills" class="section-padding bg_darkcolor mt-5">
         <div class="container pt-5">
             <div class="row">
                 <div class="col-12">
@@ -319,9 +323,13 @@
                             <div class="project-overlay">
                                 <div class="project-links">
                                     <a href="https://nileshmantati.github.io/Cara-Website/" target="_blank"
-                                        class="btn btn-light btn-sm me-2"><i class="fas fa-eye"></i></a>
+                                        rel="noopener noreferrer" class="proj-link-btn" title="Live Preview">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
                                     <a href="https://github.com/nileshmantati/Cara-Website" target="_blank"
-                                        class="btn btn-light btn-sm"><i class="fab fa-github"></i></a>
+                                        rel="noopener noreferrer" class="proj-link-btn" title="View Source Code">
+                                        <i class="fab fa-github"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -344,9 +352,13 @@
                             <div class="project-overlay">
                                 <div class="project-links">
                                     <a href="https://django-travelwebsite.onrender.com/" target="_blank"
-                                        class=" btn btn-light btn-sm me-2"><i class="fas fa-eye"></i></a>
+                                        rel="noopener noreferrer" class="proj-link-btn" title="Live Preview">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
                                     <a href="https://github.com/nileshmantati/Django-Travelwebsite" target="_blank"
-                                        class="btn btn-light btn-sm"><i class="fab fa-github"></i></a>
+                                        rel="noopener noreferrer" class="proj-link-btn" title="View Source Code">
+                                        <i class="fab fa-github"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -370,9 +382,13 @@
                             <div class="project-overlay">
                                 <div class="project-links">
                                     <a href="https://nileshmantati.github.io/movie-review-app/" target="_blank"
-                                        class="btn btn-light btn-sm me-2"><i class="fas fa-eye"></i></a>
+                                        rel="noopener noreferrer" class="proj-link-btn" title="Live Preview">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
                                     <a href="https://github.com/nileshmantati/movie-review-app" target="_blank"
-                                        class="btn btn-light btn-sm"><i class="fab fa-github"></i></a>
+                                        rel="noopener noreferrer" class="proj-link-btn" title="View Source Code">
+                                        <i class="fab fa-github"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -394,9 +410,13 @@
                             <div class="project-overlay">
                                 <div class="project-links">
                                     <a href="https://nileshmantati.github.io/react_calculator/" target="_blank"
-                                        class="btn btn-light btn-sm me-2"><i class="fas fa-eye"></i></a>
+                                        rel="noopener noreferrer" class="proj-link-btn" title="Live Preview">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
                                     <a href="https://github.com/nileshmantati/react_calculator" target="_blank"
-                                        class="btn btn-light btn-sm"><i class="fab fa-github"></i></a>
+                                        rel="noopener noreferrer" class="proj-link-btn" title="View Source Code">
+                                        <i class="fab fa-github"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -419,8 +439,13 @@
                             <div class="project-overlay">
                                 <div class="project-links">
                                     <a href="https://nileshmantati.github.io/Travel-Agency-Website/" target="_blank"
-                                        class=" btn btn-light btn-sm me-2"><i class="fas fa-eye"></i></a>
-                                    <a href="#" class="btn btn-light btn-sm"><i class="fab fa-github"></i></a>
+                                        rel="noopener noreferrer" class="proj-link-btn" title="Live Preview">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="https://github.com/nileshmantati/Travel-Agency-Website" target="_blank"
+                                        rel="noopener noreferrer" class="proj-link-btn" title="View Source Code">
+                                        <i class="fab fa-github"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -443,9 +468,13 @@
                             <div class="project-overlay">
                                 <div class="project-links">
                                     <a href="https://django-contact.onrender.com/" target="_blank"
-                                        class="btn btn-light btn-sm me-2"><i class="fas fa-eye"></i></a>
+                                        rel="noopener noreferrer" class="proj-link-btn" title="Live Preview">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
                                     <a href="https://github.com/nileshmantati/django-contact" target="_blank"
-                                        class="btn btn-light btn-sm"><i class="fab fa-github"></i></a>
+                                        rel="noopener noreferrer" class="proj-link-btn" title="View Source Code">
+                                        <i class="fab fa-github"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -469,7 +498,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="section-padding bg-light mt-5">
+    <section id="services" class="section-padding bg_darkcolor mt-5">
         <div class="container pt-5">
             <div class="row">
                 <div class="col-12">
@@ -602,8 +631,8 @@
                             <textarea name="message" class="form-control" rows="5" placeholder="Your Message"
                                 required></textarea>
                         </div>
-                        <div class="text-center">
-                            <button type="submit" id="send-btn" class="btn btn-primary btn-lg">
+                        <div class="text-center send">
+                            <button type="submit" id="send-btn" class="btn btn-lg">
                                 <i class="fas fa-paper-plane me-2"></i>Send Message
                             </button>
                         </div>
@@ -619,7 +648,6 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <p>&copy; 2025 Nilesh Mantati. All rights reserved.</p>
-                    <p>Built with ❤️ using HTML, Bootstrap & JavaScript</p>
                 </div>
             </div>
         </div>
@@ -675,9 +703,27 @@
         });
         document.getElementById('downloadResume').addEventListener('click', function () {
             const link = document.createElement('a');
-            link.href = 'NileshCV.pdf'; // Yaha apne PDF ka path dalein
-            link.download = 'NileshCV.pdf';       // Download hone par file ka naam kya hoga
+            link.href = 'NileshResume.pdf';
+            link.download = 'NileshResume.pdf';
             link.click();
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const typed = new Typed('#typed-text', {
+                strings: [
+                    'Full-Stack Developer',
+                    'Secure Backend Architectures',
+                    'Responsive UI/UX Designs',
+                    'Scalable Digital Solutions'
+                ],
+                typeSpeed: 60,       // Typing speed (ms)
+                backSpeed: 40,       // Erasing speed (ms)
+                backDelay: 1500,     // Text complete hone ke baad kitna rukna hai (1.5s)
+                startDelay: 500,     // Animation shuru hone ka delay
+                loop: true,          // Animation infinite chalti rahegi
+                showCursor: true,    // Developer terminal jaisa cursor dikhega
+                cursorChar: '|',     // Cursor ka symbol
+            });
         });
     </script>
 </body>

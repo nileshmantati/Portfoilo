@@ -3,20 +3,38 @@
 :root {
     --primary-color: #007bff;
     --secondary-color: #6f42c1;
-    --accent-color: #fd7e14;
-    --dark-color: #212529;
-    --light-color: #f8f9fa;
+    --bg-dark-primary: #0a192f;
+    /* Deep Slate Blue (Main Background) */
+    --bg-dark-secondary: #112240;
+    /* Lighter Slate (Cards, Navbar) */
+    --text-primary: #e6f1ff;
+    /* Off-White Text */
+    --text-secondary: #8892b0;
+    /* Muted Grey Text */
+    --accent-color: #64ffda;
+    /* Cyber Mint / Tech Cyan (Focus & Borders) */
+    --accent-glow: rgba(100, 255, 218, 0.15);
+
     --white: #ffffff;
-    --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    --gradient-accent: linear-gradient(135deg, var(--accent-color), #ff6b6b);
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
+    --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.4);
+    --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.bg_darkcolor {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
+    color: #f1f5f9 !important;
+}
+
+.bg_darkcolor h4 {
+    color: black !important;
 }
 
 body {
@@ -33,23 +51,46 @@ html {
 
 /* Text Gradient */
 .text-gradient {
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #ffffff !important;
+    mix-blend-mode: difference;
+    font-weight: 800;
+    -webkit-text-fill-color: initial !important;
+    background: none !important;
 }
 
 /* Custom Navbar */
 .custom-navbar {
-    background: rgba(13, 27, 62, 0.95);
-    backdrop-filter: blur(20px);
+    background: transparent !important;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-bottom: 1px solid transparent;
     padding: 1rem 0;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .custom-navbar.scrolled {
-    background: rgba(13, 27, 62, 0.98);
-    box-shadow: var(--shadow);
+    /* background-color: transparent;
+    box-shadow: var(--shadow); */
+    background: rgba(15, 17, 21, 0.75) !important;
+    /* Aapke Carbon background ka transparent version */
+    backdrop-filter: blur(12px) !important;
+    /* Premium frosted glass feel */
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    /* Subtle cyber horizontal line */
+    padding: 0.8rem 0;
+    /* Scroll hone par navbar thoda sleek (patla) ho jayega */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+.custom-navbar.scrolled .title {
+    background: linear-gradient(135deg, #0052d4 0%, #4364f7 50%, #6fb1fc 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.custom-navbar.scrolled .nav-link {
+    color: #ffffff !important;
 }
 
 .navbar-brand {
@@ -62,6 +103,10 @@ html {
     margin: 0 0.5rem;
     position: relative;
     transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #d2e0ee;
 }
 
 .nav-link::after {
@@ -83,7 +128,7 @@ html {
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(135deg, #0d1b3e 0%, #1a2a5e 100%);
+    background: linear-gradient(135deg, #0d1b3e 0%, #072995 100%);
     color: var(--white);
     position: relative;
     overflow: hidden;
@@ -110,7 +155,7 @@ html {
 .hero-title {
     font-size: 3.5rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: .6rem;
     line-height: 1.2;
 }
 
@@ -123,7 +168,8 @@ html {
 
 .hero-description {
     font-size: 1.1rem;
-    margin-bottom: 2rem;
+    margin-top: .6rem;
+    margin-bottom: .6rem;
     opacity: 0.9;
     line-height: 1.8;
 }
@@ -133,12 +179,16 @@ html {
     padding: 12px 30px;
     font-weight: 500;
     border-radius: 50px;
+    background-color: #9efae5;
     transition: all 0.3s ease;
 }
 
 .hero-buttons .btn:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-hover);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    background-color: transparent;
 }
 
 .social-links {
@@ -197,17 +247,26 @@ html {
 
 .floating-element {
     position: absolute;
-    width: 60px;
-    height: 60px;
-    background: var(--gradient);
-    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    background: rgba(17, 34, 64, 0.7);
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    border-radius: 12px;
+    /* Square with round corners looks premium */
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--white);
-    font-size: 1.5rem;
-    animation: floating 3s ease-in-out infinite;
+    color: var(--accent-color);
+    font-size: 1.6rem;
+    backdrop-filter: blur(5px);
     box-shadow: var(--shadow);
+    transition: var(--transition);
+    animation: floatingicons 6s ease-in-out infinite;
+}
+
+.floating-element:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 15px var(--accent-glow);
 }
 
 .element-1 {
@@ -232,11 +291,6 @@ html {
     top: 20%;
     left: 5%;
     animation-delay: -4s;
-}
-
-/* Section Padding */
-.section-padding {
-    /* padding: 100px 0; */
 }
 
 /* Section Title */
@@ -382,7 +436,7 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 123, 255, 0.9);
+    background: rgba(153, 199, 249, 0.9);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -511,9 +565,9 @@ html {
 
 /* Footer */
 .footer {
-    background: var(--dark-color);
+    background: var(--bg-dark-secondary);
     color: var(--white);
-    padding: 2rem 0;
+    padding: 1.2rem 0;
     text-align: center;
 }
 
@@ -558,15 +612,15 @@ html {
     }
 }
 
-@keyframes floating {
+@keyframes floatingicons {
 
     0%,
     100% {
-        transform: translateY(0px);
+        transform: translateX(0px);
     }
 
     50% {
-        transform: translateY(-10px);
+        transform: translateX(15px);
     }
 }
 
@@ -637,4 +691,142 @@ html {
         justify-content: center;
         margin-top: 2rem;
     }
+}
+
+/* Premium Tech Typography & Effects */
+.hero-pretitle {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #64ffda;
+    font-family: 'Fira Code', monospace;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Blinking terminal cursor effect */
+.typed-cursor {
+    color: #64ffda;
+    font-size: 1.8rem;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#typed-text {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #64ffda;
+    font-family: 'Fira Code', monospace;
+}
+
+.resume .btn {
+    background-color: #9efae5;
+    transition: all 0.3s ease;
+}
+
+.resume .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    background-color: transparent;
+}
+
+/* Premium Glassmorphic Overlay Grid */
+.project-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Heavy generic blue overlay ko hata kar dark subtle transparency overlay with blur cascade */
+    background: rgba(10, 25, 47, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* Card hover layout configuration */
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+/* Custom Minimalist Round Tech Buttons */
+.project-links {
+    display: flex;
+    gap: 1.2rem;
+    transform: translateY(20px);
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.project-card:hover .project-links {
+    transform: translateY(0);
+}
+
+.proj-link-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(17, 34, 64, 0.9);
+    border: 1px solid rgba(100, 255, 218, 0.3);
+    color: var(--accent-color) !important;
+    /* Cyber Mint Accent */
+    border-radius: 50%;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+/* Smooth Micro-interactions on Hover */
+.proj-link-btn:hover {
+    background: var(--accent-color);
+    color: #0a192f !important;
+    /* Invert contrast for high structural readability */
+    border-color: var(--accent-color);
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(100, 255, 218, 0.4);
+}
+
+.send .btn {
+    background-color: #9efae5;
+    color: black;
+    transition: all 0.3s ease;
+}
+
+.send .btn:hover {
+    background-color: black;
+    transform: translateY(-2px);
+    /* box-shadow: var(--shadow-hover); */
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    /* background-color: transparent; */
+
 }

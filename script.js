@@ -1,29 +1,29 @@
 // Custom JavaScript for Frontend Developer Portfolio
 
-document.addEventListener('DOMContentLoaded', function() {
-    
+document.addEventListener('DOMContentLoaded', function () {
+
     // Navbar scroll effect
     const navbar = document.querySelector('.custom-navbar');
     const navLinks = document.querySelectorAll('.nav-link');
-    
-    window.addEventListener('scroll', function() {
+
+    window.addEventListener('scroll', function () {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
-        
+
         // Update active nav link based on scroll position
         updateActiveNavLink();
     });
-    
+
     // Smooth scrolling for navigation links
     navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetSection = document.querySelector(targetId);
-            
+
             if (targetSection) {
                 const offsetTop = targetSection.offsetTop - 80;
                 window.scrollTo({
@@ -33,18 +33,18 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
+
     // Update active navigation link
     function updateActiveNavLink() {
         const sections = document.querySelectorAll('section[id]');
         const scrollPos = window.scrollY + 100;
-        
+
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
             const sectionId = section.getAttribute('id');
             const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-            
+
             if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
                 navLinks.forEach(link => link.classList.remove('active'));
                 if (navLink) {
@@ -53,16 +53,16 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
+
     // Animate skill bars when in viewport
     const skillBars = document.querySelectorAll('.skill-progress');
     const skillsSection = document.querySelector('#skills');
-    
+
     const animateSkillBars = () => {
         const sectionTop = skillsSection.offsetTop;
         const sectionHeight = skillsSection.offsetHeight;
         const scrollPos = window.scrollY + window.innerHeight;
-        
+
         if (scrollPos > sectionTop + 100) {
             skillBars.forEach(bar => {
                 const width = bar.getAttribute('data-width');
@@ -71,25 +71,25 @@ document.addEventListener('DOMContentLoaded', function() {
             window.removeEventListener('scroll', animateSkillBars);
         }
     };
-    
+
     window.addEventListener('scroll', animateSkillBars);
-    
+
     // Animate counters
     const counters = document.querySelectorAll('.stat-item h4');
     let animated = false;
-    
+
     const animateCounters = () => {
         const aboutSection = document.querySelector('#about');
         const sectionTop = aboutSection.offsetTop;
         const scrollPos = window.scrollY + window.innerHeight;
-        
+
         if (scrollPos > sectionTop + 100 && !animated) {
             animated = true;
             counters.forEach(counter => {
                 const target = parseInt(counter.innerText);
                 const increment = target / 100;
                 let current = 0;
-                
+
                 const updateCounter = () => {
                     if (current < target) {
                         current += increment;
@@ -99,40 +99,40 @@ document.addEventListener('DOMContentLoaded', function() {
                         counter.innerText = target + (counter.innerText.includes('%') ? '%' : '+');
                     }
                 };
-                
+
                 updateCounter();
             });
             window.removeEventListener('scroll', animateCounters);
         }
     };
-    
+
     window.addEventListener('scroll', animateCounters);
-    
+
     // Contact form submission
     const contactForm = document.querySelector('.contact-form');
-    
-    contactForm.addEventListener('submit', function(e) {
+
+    contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        
+
         // Get form data
         const formData = new FormData(this);
         const name = this.querySelector('input[placeholder="Your Name"]').value;
         const email = this.querySelector('input[placeholder="Your Email"]').value;
         const subject = this.querySelector('input[placeholder="Subject"]').value;
         const message = this.querySelector('textarea').value;
-        
+
         // Validate form
         if (!name || !email || !subject || !message) {
             showNotification('Please fill in all fields.', 'error');
             return;
         }
-        
+
         // Show loading state
         const submitBtn = this.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
         submitBtn.disabled = true;
-        
+
         // Simulate form submission (replace with actual form handling)
         setTimeout(() => {
             showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.disabled = false;
         }, 2000);
     });
-    
+
     // Notification system
     function showNotification(message, type = 'info') {
         const notification = document.createElement('div');
@@ -158,9 +158,9 @@ document.addEventListener('DOMContentLoaded', function() {
             <i class="fas fa-${type === 'error' ? 'exclamation-circle' : 'check-circle'} me-2"></i>
             ${message}
         `;
-        
+
         document.body.appendChild(notification);
-        
+
         setTimeout(() => {
             notification.style.animation = 'slideOutRight 0.3s ease-out';
             setTimeout(() => {
@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 300);
         }, 3000);
     }
-    
+
     // Add notification animations to CSS
     const style = document.createElement('style');
     style.textContent = `
@@ -182,20 +182,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     `;
     document.head.appendChild(style);
-    
+
     // Parallax effect for hero section
     const heroSection = document.querySelector('.hero-section');
-    
+
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
         const parallaxSpeed = 0.5;
         heroSection.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
     });
-    
+
     // Mobile menu close on link click
     const navbarToggler = document.querySelector('.navbar-toggler');
     const navbarCollapse = document.querySelector('.navbar-collapse');
-    
+
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             if (navbarCollapse.classList.contains('show')) {
@@ -203,13 +203,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
+
     // Add scroll animations to elements
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, observerOptions);
-    
+
     // Observe elements for animation
     document.querySelectorAll('.project-card, .service-card, .about-content, .contact-item').forEach(el => {
         el.style.opacity = '0';
@@ -273,7 +273,7 @@ CERTIFICATIONS
 • Google Analytics Certified
 • Meta React Developer Certificate
     `;
-    
+
     // Create and download the resume
     const blob = new Blob([resumeContent], { type: 'text/plain' });
     const url = window.URL.createObjectURL(blob);
@@ -284,7 +284,7 @@ CERTIFICATIONS
     a.click();
     document.body.removeChild(a);
     window.URL.revokeObjectURL(url);
-    
+
     // Show notification
     const notification = document.createElement('div');
     notification.className = 'alert alert-success';
@@ -300,9 +300,9 @@ CERTIFICATIONS
         <i class="fas fa-download me-2"></i>
         Resume downloaded successfully!
     `;
-    
+
     document.body.appendChild(notification);
-    
+
     setTimeout(() => {
         notification.style.animation = 'slideOutRight 0.3s ease-out';
         setTimeout(() => {
